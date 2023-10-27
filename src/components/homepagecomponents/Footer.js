@@ -4,6 +4,7 @@ import  MailchimpForm from "./MailchimpForm";
 import navIcon1 from "../../assets/img/nav-icon1.svg";
 import navIcon2 from "../../assets/img/nav-icon2.svg";
 import navIcon3 from "../../assets/img/nav-icon3.svg";
+import { WebsiteName } from "../../constants";
 
 const Footer = () => {
   return (
@@ -12,7 +13,7 @@ const Footer = () => {
         <Row className="align-items-center">
           <MailchimpForm />
           <Col size={12} sm={6}>
-          <a href="#" className="logo">MAYURI.IO</a>
+          <a href="#" className="logo">{WebsiteName}</a>
           </Col>
           <Col size={12} sm={6} className="text-center text-sm-end">
             <div className="social-icon">

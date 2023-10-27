@@ -1,1 +1,1 @@
-export const WebsiteName = "Commute.io";
+export const WebsiteName = "SATHI.IO";

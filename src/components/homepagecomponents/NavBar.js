@@ -4,6 +4,7 @@ import navIcon1 from "../../assets/img/nav-icon1.svg";
 import navIcon3 from "../../assets/img/nav-icon3.svg";
 import { FaGithub } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import { WebsiteName } from "../../constants";
 
 const NavBar = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -39,7 +40,7 @@ const NavBar = () => {
           }}
           className="logo"
         >
-          MAYURI.IO
+          {WebsiteName}
         </a>
         <Navbar.Toggle aria-controls="basic-navbar-nav">
           <span className="navbar-toggler-icon"></span>
