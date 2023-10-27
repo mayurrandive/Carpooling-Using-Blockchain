@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.scss";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import "./Login.scss";
 
 import AdministratorDashboardRequests from "./components/javascripts/administrator-dashboard-requests";
 import AdministratorDashboardUserRegistration from "./components/javascripts/user-registration";

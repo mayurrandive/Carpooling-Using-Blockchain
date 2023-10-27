@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useRouteMatch } from 'react-router-dom';
 import { FaUser, FaListAlt, FaCar, FaHistory, FaEnvelope } from 'react-icons/fa';
 import { RiCaravanFill } from 'react-icons/ri';
+import { WebsiteName } from '../../constants';
 
 const Navbar = () => {
   const match = useRouteMatch('/dashboard/:passengerID');
@@ -9,7 +10,7 @@ const Navbar = () => {
 
   return (
     <div className="MyNavbar">
-      <h3>COMMUTE.IO</h3>
+      <h3>{WebsiteName}</h3>
       <Link to={`/dashboard/${passengerID}`} className="profile">
         <FaUser />Profile
       </Link>

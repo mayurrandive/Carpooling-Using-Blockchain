@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import {
   BrowserRouter as Router
 } from "react-router-dom";
+import { WebsiteName } from "../../constants";
 
 const NavBar2 = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -57,7 +58,7 @@ const NavBar2 = () => {
   }}
   onMouseLeave={(e) => {
     e.target.style.color = 'white';
-  }}className="logo">COMMUTE.IO</a>
+  }}className="logo">{WebsiteName}</a>
           <Navbar.Toggle aria-controls="basic-navbar-nav">
             <span className="navbar-toggler-icon"></span>
           </Navbar.Toggle>

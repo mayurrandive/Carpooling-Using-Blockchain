@@ -8,6 +8,7 @@ import Modal from 'react-bootstrap/Modal';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import { style } from '@mui/system';
+import { WebsiteName } from '../../constants';
 
 const contractAddress = '0x9D66687E6Da2BC0A5444125A8fA389C3e96F1921';
 
@@ -231,7 +232,7 @@ function AdministratorDashboardRequests (){
         {!isLoading && (<div className='administrator-dashboard-requests-container' style={{backgroundColor:"#F1EEE5", marginTop:"1vh",marginLeft:"1vw",width:"98vw", height:"98vh", display:"flex", flexDirection:"column", border:"solid 1px black", borderRadius:"20px"}}>
             <div className='administrator-dashboard-requests-navbar' style={{backgroundColor:"#FFFFFF",width:"97.75vw", height:"10vh", display:"flex", flexDirection:"row", textAlign:"center", borderRadius:"20px 20px 0px 0px", paddingLeft:"1vh", paddingTop:"1vh"}}>
                 <ul style={{listStyle:"none", display:"flex", flexDirection:"row"}}>
-                <li style={{marginTop:"1vh"}}><button style={{backgroundColor:"transparent",color:"black", fontWeight:"700", fontSize:"35px", marginTop:"0vh",paddingRight:"10vw",marginBottom:"5vh", height:"5vh"}}><Link style={{color:'black'}}to={`/`}>COMMUTE.IO</Link></button></li>
+                <li style={{marginTop:"1vh"}}><button style={{backgroundColor:"transparent",color:"black", fontWeight:"700", fontSize:"35px", marginTop:"0vh",paddingRight:"10vw",marginBottom:"5vh", height:"5vh"}}><Link style={{color:'black'}}to={`/`}>{WebsiteName}</Link></button></li>
                     <li className='not-logo'><button onClick={handleClick1} className='administrator-dashboard-requests-navbar-buttons' style={{transition: '0.3s ease-in', borderBottom: clicked1?"4px solid var(--col-1)":"none"}}><Link style={{color:'var(--col-1)'}} to={`/passenger-requests`} className="passenger-requests">Request Records</Link></button></li>
                     <li className='not-logo'><button onClick={handleClick2} className='administrator-dashboard-requests-navbar-buttons' style={{transition: '0.3s ease-in', borderBottom: clicked2?"4px solid var(--col-1)":"none"}} ><Link style={{color:'var(--col-1)'}} to={`/enrolled-passengers`} className="enrolled-passengers">Enrolled Passengers</Link></button></li>
                     <li className='not-logo'><button onClick={handleClick3} className='administrator-dashboard-requests-navbar-buttons' style={{transition: '0.3s ease-in', borderBottom: clicked3?"4px solid var(--col-1)":"none"}}>Inbox</button></li>

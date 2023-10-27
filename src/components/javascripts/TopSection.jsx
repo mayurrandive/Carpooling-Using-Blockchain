@@ -1,6 +1,7 @@
 import React from "react";
 import { useState,useEffect } from "react";
 import { FaStar } from 'react-icons/fa';
+import { WebsiteName } from "../../constants";
 
 const TopSection= ()=>{
     return(
@@ -30,7 +31,7 @@ const TopSection= ()=>{
             <div>Registered Vehicle:</div>
             
             <div className="RewardReferral">
-            <div>COMMUTE.IO Passenger ID:</div>
+            <div>{WebsiteName} Passenger ID:</div>
             <div>Reward Points:</div>
             <div>Referral Link:</div>
             </div>

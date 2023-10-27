@@ -12,6 +12,7 @@ import { Web3Storage } from 'web3.storage';
 import Carousel from 'react-bootstrap/Carousel';
 import axios from 'axios';
 import imageh from "../javascripts/mwhahahaha.png";
+import { WebsiteName } from '../../constants';
 
 
 const apiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDQ5NTg0QzFjYjQ1QzczMTQwODQ3RjY2NjBkQ0Y5MzNjODNBM2NFMjAiLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2ODY1OTAxNDU4NzEsIm5hbWUiOiJjb21tdXRlLWlvLWZpbGUtdXBsb2FkIn0.1E8NnGBcSwApaWAm6mY6F4I1hZWQKhFDCkeOMYrSp7E';
@@ -196,10 +197,10 @@ useEffect(() => {
     <div className='administrator-dashboard-requests-container' style={{backgroundColor:"#F1EEE5", marginTop:"1vh",marginLeft:"1vw",width:"98vw", height:"98vh", display:"flex", flexDirection:"column", border:"solid 1px black", borderRadius:"20px"}}>
         <div className='administrator-dashboard-requests-navbar' style={{backgroundColor:"#FFFFFF",width:"97.75vw", height:"10vh", display:"flex", flexDirection:"row", textAlign:"center", borderRadius:"20px 20px 0px 0px", paddingLeft:"1vh", paddingTop:"1vh"}}>
             <ul style={{listStyle:"none", display:"flex", flexDirection:"row"}}>
-                <li style={{marginTop:"1vh"}}><button style={{marginLeft:"0.5vw",backgroundColor:"transparent",color:"black", fontWeight:"700", fontSize:"40px", marginTop:"-1vh",paddingRight:"10vw",marginBottom:"5vh", height:"5vh"}}><a href='/' style={{border:"none",color:"black"}}>COMMUTE.IO</a></button></li>
+                <li style={{marginTop:"1vh"}}><button style={{marginLeft:"0.5vw",backgroundColor:"transparent",color:"black", fontWeight:"700", fontSize:"40px", marginTop:"-1vh",paddingRight:"10vw",marginBottom:"5vh", height:"5vh"}}><a href='/' style={{border:"none",color:"black"}}>{WebsiteName}</a></button></li>
             </ul>
         </div><br></br>
-        <h2 style={{fontWeight:"700", fontSize:"xx-large",textAlign:'center',color:'black'}}>COMMUTE.IO VERIFICATION PORTAL</h2>
+        <h2 style={{fontWeight:"700", fontSize:"xx-large",textAlign:'center',color:'black'}}>{WebsiteName} VERIFICATION PORTAL</h2>
         <h5 style={{fontWeight:"700",fontSize:"x-large",textAlign:'center',color:'black'}}>We're thrilled to have you here.</h5>
         
         {isOriginalSection && !isExistingApplication && !isFreshApplication && (
@@ -397,7 +398,7 @@ Go Back</button>
                     {userDetails[6] == 1 && (
                     <div>
                        <hr style={{ height: '1px', backgroundColor: 'black', border: 'none' }} />
-                       <h4 style={{color:'black',fontSize:"larger"}}>Click below to reveal your <b>Passenger ID</b> for COMMUTE.IO</h4>
+                       <h4 style={{color:'black',fontSize:"larger"}}>Click below to reveal your <b>Passenger ID</b> for {WebsiteName}</h4>
                        <h4 style={{color:'black',fontSize:"larger"}}>Please note that this ID will hereonwards be used for all identification purposes on this platform.</h4>
                      {revealedPassID=="" &&(<button style={{backgroundColor:'var(--col-1)',color:'white', padding:"1vh",borderRadius:'5px'}} onClick={handleRevealPassID}><h5 style={{fontWeight:'700'}}>Reveal Passenger ID</h5></button> ) }
                      {!(revealedPassID=="")&& (<h5 style={{ color: 'black', fontSize: 'x-large',fontWeight:"700" }}>Passenger ID: {revealedPassID}</h5>)}

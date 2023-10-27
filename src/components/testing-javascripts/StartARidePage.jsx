@@ -19,6 +19,7 @@ import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import appendAllarray from './actions/allarrayActions.js';
 import CommuteIOABI from "../ABI/contracttestingABI.json";
+import { WebsiteName } from '../../constants.js';
 const contractAddress = '0x9D66687E6Da2BC0A5444125A8fA389C3e96F1921';
 
 
@@ -221,7 +222,7 @@ function StartARide() {
       <div>
         <div style={{display:'flex', flexDirection:'column'}}>
             <div className="MyNavbar">
-    <a href='/' style={{border:"none"}}><h3 style={{fontWeight:"700", fontSize:"xx-large", fontFamily:"Poppins", marginTop:"-1vh"}}>COMMUTE.IO</h3></a>
+    <a href='/' style={{border:"none"}}><h3 style={{fontWeight:"700", fontSize:"xx-large", fontFamily:"Poppins", marginTop:"-1vh"}}>{WebsiteName}</h3></a>
   <button className='i-know-this-class-of-buttons-doesnt-exist'><Link style={{color:'var(--col-1)'}} to={`/dashboard/${passengerID}`} className="profile">
     <FaUser style={{marginRight:"0.5vw", transform:"scale(1.25)"}} />Profile
   </Link></button>

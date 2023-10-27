@@ -17,6 +17,7 @@ import AvatarEditor from 'react-avatar-editor';
 
 import Button from 'react-bootstrap/Button';
 import Toast from 'react-bootstrap/Toast';
+import { WebsiteName } from '../../constants';
 
 
 
@@ -383,7 +384,7 @@ function formatDate(date) {
     <div> {!(isLoading) && ( 
       <div style={{display:'flex', flexDirection:'column'}}>
     <div className="MyNavbar">
-    <a href='/' style={{border:"none"}}><h3 style={{fontWeight:"700", fontSize:"xx-large", fontFamily:"Poppins", marginTop:"-1vh"}}>COMMUTE.IO</h3></a>
+    <a href='/' style={{border:"none"}}><h3 style={{fontWeight:"700", fontSize:"xx-large", fontFamily:"Poppins", marginTop:"-1vh"}}>{WebsiteName}</h3></a>
   <button className='i-know-this-class-of-buttons-doesnt-exist'><Link style={{color:'var(--col-1)'}} to={`/dashboard/${passengerID}`} className="profile">
     <FaUser style={{marginRight:"0.5vw", transform:"scale(1.25)"}} />Profile
   </Link></button>
@@ -583,7 +584,7 @@ function formatDate(date) {
         <div><b>Registered Vehicle:</b> {isLoading?" ":passengers[passengerID-1].PassVehicleName == " " ? "N/A" : `${passengers[passengerID-1].PassVehicleName}, ${passengers[passengerID-1].PassVehicleNumber}`}</div>
         </div>
         <div className="RewardReferral">
-        <div style={{marginTop:"0.75vw"}}><b>COMMUTE.IO Passenger ID: </b>{passengerID}</div>
+        <div style={{marginTop:"0.75vw"}}><b>{WebsiteName} Passenger ID: </b>{passengerID}</div>
         <div><b>Reward Points: </b>0</div>
         <div><b>Referral Link: </b>Coming Soon...</div>
         </div>
