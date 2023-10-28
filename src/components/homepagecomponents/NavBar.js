@@ -76,7 +76,7 @@ const NavBar = () => {
               }
               onClick={() => onUpdateActiveLink("testimonials")}
             >
-              Testimonials
+              Help
             </Nav.Link>
             <Nav.Link
               href="/BookARide"
@@ -90,16 +90,16 @@ const NavBar = () => {
           </Nav>
           <span className="navbar-text">
             <div className="social-icon">
-              <a href="https://linktr.ee/team_commute_io_linkedin">
+              <a href="https://www.linkedin.com/in/mayur-randive/">
                 <img src={navIcon1} alt="" />
               </a>
-              <a href="https://github.com/unmani-shinde/paused-P2P-carpooling.git/">
+              <a href="https://github.com/mayurrandive/Carpooling-Using-Blockchain">
                 <FaGithub
                   style={{ color: "white", transform: "scale(1.2)" }}
                   className="github-icon"
                 ></FaGithub>
               </a>
-              <a href="https://linktr.ee/team_commute_io_instagram">
+              <a href="">
                 <img src={navIcon3} alt="" />
               </a>
             </div>

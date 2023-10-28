@@ -37,7 +37,7 @@ const LandingPage = () => {
     
       <NavBar/>
       <Banner />
-      <Skills />
+      {/* <Skills /> */}
       <Projects />
       <Contact />
       <Footer />

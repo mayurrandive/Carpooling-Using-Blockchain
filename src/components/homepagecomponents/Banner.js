@@ -11,7 +11,7 @@ const Banner = () => {
   const [text, setText] = useState('');
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const [index, setIndex] = useState(1);
-  const toRotate = [  " eco-friendly."];
+  const toRotate = [  "Save Together.","Build Together." ];
   const period = 100;
 
   useEffect(() => {
@@ -56,10 +56,10 @@ const Banner = () => {
             <TrackVisibility>
               {({ isVisible }) =>
               <div style={{marginTop:'-13vh'}} className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                <span className="tagline" style={{color:"white",marginTop:'2vh'}}>Carpooling with  a Conscious.</span>
-                <h1>{`Share a ride that is`} <span className="txt-rotate" dataPeriod="100" data-rotate='[ "safe."," economic.", " eco-friendly."]'><span className="wrap">{text}</span></span></h1>
-                <p style={{marginBottom:"2vh",fontSize:'x-large'}}>Escape the clutches of major ride-sharing companies that compromise your privacy.</p>
-                <p style={{fontSize:'x-large'}}>Embrace a secure and reliable carpooling system built on Ethereum. </p>
+                {/* <span className="tagline" style={{color:"white",marginTop:'2vh'}}>Carpooling with  a Conscious.</span> */}
+                <h1>{`Ride Together, `} <span className="txt-rotate" dataPeriod="100" data-rotate='[ "Save Together.","Build Together.", ""]'><span className="wrap">{text}</span></span></h1>
+                <p style={{marginBottom:"2vh",fontSize:'x-large'}}>It's time to reclaim your privacy and connect with a like-minded community. Choose carpooling over corporate ride-hailing..</p>
+                <p style={{fontSize:'x-large'}}>Experience the future of transportation. Carpooling on Ethereum - because transparency matters.</p>
                   <button style={{color:"white",marginLeft:'40vw',width:'20vw'}}onClick={() => console.log('connect')}>Visit our Blog <ArrowRightCircle style={{color:"white"}}size={25} /></button>
               </div>}
             </TrackVisibility>

@@ -422,7 +422,7 @@ function AdministratorDashboardUserRegistration() {
         </ul>
       </div>
       <br></br>
-      <h2
+      {/* <h2
         style={{
           fontWeight: "700",
           fontSize: "xx-large",
@@ -432,7 +432,7 @@ function AdministratorDashboardUserRegistration() {
         }}
       >
         SIGN UP TO USE {WebsiteName}
-      </h2>
+      </h2> */}
       <h5
         style={{
           fontWeight: "700",
@@ -441,7 +441,7 @@ function AdministratorDashboardUserRegistration() {
           color: "black",
         }}
       >
-        We're thrilled to have you here.
+        Welcome to Sathi - Your Travel Companion
       </h5>
       <div
         style={{
@@ -494,9 +494,9 @@ function AdministratorDashboardUserRegistration() {
                     textAlign: "center",
                   }}
                 >
-                  But first, let's get to know you.
+                  Create Account
                 </h5>
-                <table style={{ padding: "5vh", marginTop: "-3vh" }}>
+                <table style={{ padding: "50vh", marginTop: "-3vh" }}>
                   <tbody>
                     <tr style={{ height: "15vh" }}>
                       <td>
@@ -509,7 +509,7 @@ function AdministratorDashboardUserRegistration() {
                             color: "var(--col-1)",
                           }}
                         >
-                          What's your Name?
+                          Name
                         </label>
                       </td>
                       <td style={{ width: "50vw" }}>
@@ -541,7 +541,7 @@ function AdministratorDashboardUserRegistration() {
                             color: "var(--col-1)",
                           }}
                         >
-                          Where do you stay?
+                          Address
                         </label>
                       </td>
                       <td>
@@ -572,12 +572,12 @@ function AdministratorDashboardUserRegistration() {
                             color: "var(--col-1)",
                           }}
                         >
-                          What's your EMail?
+                          Email?
                         </label>
                       </td>
                       <td>
                         <input
-                          placeholder="EMail Address"
+                          placeholder="Email Address"
                           style={{
                             width: "30vw",
                             border: "solid 1px var(--main-bg-3)",
@@ -606,7 +606,7 @@ function AdministratorDashboardUserRegistration() {
                             color: "var(--col-1)",
                           }}
                         >
-                          What's your Gender?
+                          Gender
                         </label>
                       </td>
                       <td>
