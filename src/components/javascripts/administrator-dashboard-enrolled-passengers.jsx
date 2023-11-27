@@ -67,7 +67,7 @@ function AdministratorDashboardPassengers() {
           // Get the contract instance
           const contract = new web3.eth.Contract(CommuteIOABI, contractAddress);
           setContract(contract);
-          if (accounts[0] == "0x6c03F36B57Ad95aeAC06ad1dD100da00d4936aF5") {
+          if (accounts[0] == "0xDBE633850733D6244B30161197e41728Bb11E771") {
             setRoleAdmin(true);
           }
           // Load the passenger requests

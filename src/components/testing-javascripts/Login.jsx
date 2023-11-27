@@ -19,6 +19,7 @@ function LoginPage() {
 
   const handleCheckboxChange = (event) => {
     setIsChecked(event.target.checked);
+    console.log(isChecked)
   };
 
   const handleAdminCheckboxChange = (event) => {
@@ -82,6 +83,9 @@ function LoginPage() {
         console.log(passengerID, typeof passengerID);
         const obj = await contract.methods.GetPassDetails(passengerID).call();
         const passDetails = Object.values(obj);
+        console.log("passdetails", passDetails)
+        console.log("account", accounts)
+
         if (passengerID == passDetails[0] && passDetails[2] == accounts[0]) {
           try {
             setLoading(true);
