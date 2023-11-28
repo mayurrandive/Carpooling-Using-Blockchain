@@ -2,6 +2,8 @@
 pragma solidity ^0.8.0;
 
 contract Carpooling {
+    enum UserStatus { Pending, Approved, Rejected }
+
     struct User {
         uint userID;
         string name;
@@ -10,12 +12,13 @@ contract Carpooling {
         string residentialAddress;
         address walletAddress;
         string documentHash; // Hash of the document stored off-chain
+        UserStatus status;
     }
 
     struct Vehicle {
         uint vehicleID;
         string vehicleNumber;
-        string Model;
+        string model;
         uint yearsOfUse;
         string documentHash; // Hash of the vehicle's document
     }
@@ -41,15 +44,8 @@ contract Carpooling {
 
     address public admin;
 
-    constructor() {
-        admin = msg.sender; // Set contract creator as the admin
-    }
-
-    modifier onlyAdmin() {
-        require(msg.sender == admin, "Only admin can perform this action");
-        _;
-    }
-
+    event UserApproved(uint userID);
+    event UserRejected(uint userID);
     event RideCreated(
         uint rideId,
         string origin,
@@ -58,11 +54,19 @@ contract Carpooling {
         uint fare,
         uint seats
     );
-
     event RideBooked(
         uint rideId,
         address passenger
     );
+
+    constructor() {
+        admin = msg.sender; // Set contract creator as the admin
+    }
+
+    modifier onlyAdmin() {
+        require(msg.sender == admin, "Only admin can perform this action");
+        _;
+    }
 
     function addUser(
         uint _userID,
@@ -73,29 +77,24 @@ contract Carpooling {
         address _walletAddress,
         string memory _documentHash
     ) public onlyAdmin {
-        users[_userID] = User(_userID, _name, _gender, _emailAddress, _residentialAddress, _walletAddress, _documentHash);
+        users[_userID] = User(_userID, _name, _gender, _emailAddress, _residentialAddress, _walletAddress, _documentHash, UserStatus.Pending);
         numberOfUsers++;
     }
 
-    function deleteUser(uint _userID) public onlyAdmin {
-        delete users[_userID];
-        numberOfUsers--;
+    function approveUser(uint _userID) public onlyAdmin {
+        require(users[_userID].walletAddress != address(0), "User does not exist");
+        require(users[_userID].status == UserStatus.Pending, "User already processed");
+
+        users[_userID].status = UserStatus.Approved;
+        emit UserApproved(_userID);
     }
 
-    function addVehicle(
-        uint _vehicleID,
-        string memory _vehicleNumber,
-        string memory _Model,
-        uint _yearsOfUse,
-        string memory _documentHash
-    ) public onlyAdmin {
-        vehicles[_vehicleID] = Vehicle(_vehicleID, _vehicleNumber, _Model, _yearsOfUse, _documentHash);
-        numberOfVehicles++;
-    }
+    function rejectUser(uint _userID) public onlyAdmin {
+        require(users[_userID].walletAddress != address(0), "User does not exist");
+        require(users[_userID].status == UserStatus.Pending, "User already processed");
 
-    function deleteVehicle(uint _vehicleID) public onlyAdmin {
-        delete vehicles[_vehicleID];
-        numberOfVehicles--;
+        users[_userID].status = UserStatus.Rejected;
+        emit UserRejected(_userID);
     }
 
     function createRide(
@@ -120,15 +119,5 @@ contract Carpooling {
         emit RideBooked(_rideId, msg.sender);
     }
 
-    // Function to receive payments for a specific ride
-    function payForRide(uint _rideId) public payable {
-        require(msg.value == rides[_rideId].fare, "Incorrect fare amount");
-        address host = rides[_rideId].host;
-        require(host != address(0), "Ride does not exist or host is invalid");
-
-        payable(host).transfer(msg.value); // Transfer the fare to the host
-    }
-
-    // Additional functions can be added here
-    // ...
+    
 }
