@@ -15,7 +15,7 @@ contract Carpooling {
     struct Vehicle {
         uint vehicleID;
         string vehicleNumber;
-        string type;
+        string Model;
         uint yearsOfUse;
         string documentHash; // Hash of the vehicle's document
     }
@@ -85,11 +85,11 @@ contract Carpooling {
     function addVehicle(
         uint _vehicleID,
         string memory _vehicleNumber,
-        string memory _type,
+        string memory _Model,
         uint _yearsOfUse,
         string memory _documentHash
     ) public onlyAdmin {
-        vehicles[_vehicleID] = Vehicle(_vehicleID, _vehicleNumber, _type, _yearsOfUse, _documentHash);
+        vehicles[_vehicleID] = Vehicle(_vehicleID, _vehicleNumber, _Model, _yearsOfUse, _documentHash);
         numberOfVehicles++;
     }
 
